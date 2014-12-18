@@ -3,14 +3,14 @@
 
 
             <c:forEach var="i" items="${produit}">
-                <c:if test="${i.isFinished}">
+                <c:if test="${i.Finished}">
                 <input type="button" value="Plat pret" name="doIt" onclick="javascript:goProduit(${i.idUnique})" />${i.idUnique}
                 <input type="button" value="RAZ" name="doZero" onclick="javascript:goZero(${i.idUnique})"/>
                 </c:if>
-                <c:if test="${!i.isFinished&&i.isStarted}">
+                <c:if test="${!i.Finished&&i.Started}">
                 <input type="button" value="En cour" name="doIt" onclick="javascript:goProduit(${i.idUnique})" />${i.idUnique}
                 </c:if>
-                <c:if test="${!i.isStarted}">
+                <c:if test="${!i.Started}">
                 <input type="button" value="Commande" name="doIt" onclick="javascript:goProduit(${i.idUnique})" />${i.idUnique}
                 </c:if>
                 <br>
